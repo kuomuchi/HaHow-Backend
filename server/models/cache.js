@@ -26,13 +26,12 @@ async function setProfile(num, id, obj){ // set all hero profile an a obj
 
 async function combineHero(){ // updata hero data to cache
     const data = await getAllHero()
-    const allId = data.map((x) => {return x.id})
+    const allId = data.map((x) => {return x.id}) // turn hero id to array
 
-    const profile = await setProfile(allId.length - 1, allId, {})
-
+    const profile = await setProfile(allId.length - 1, allId, {}) // sort hero profile
 
     for(let num = 0; num < data.length; num++){
-        data[num].profile = profile[data[num].id]
+        data[num].profile = profile[data[num].id] // combine hero data
     }
     
     myCache.set("heroes", data)

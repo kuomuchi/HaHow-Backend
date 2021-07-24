@@ -1,4 +1,5 @@
 const fetch = require("node-fetch")
+const { selectData } = require("./mongodb")
 
 const sendType = { // fetch data type
     method: 'GET',

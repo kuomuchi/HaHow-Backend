@@ -30,5 +30,7 @@ node index.js
 * express-rate-limit
 * node-cache
 * node-cron
+* dotenv
+* mongoDB
 
-**專案版本: 1.4**
+**專案版本: 1.5**
