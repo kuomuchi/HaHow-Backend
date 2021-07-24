@@ -16,7 +16,6 @@ node index.js
 ## 未來功能
 * 加入docker
 * 新增偽API資料
-* 新增cache / 定期更新HaHow API資料。
 * 加入DB，NoSQL
 
 ## 好想要玩
@@ -29,5 +28,6 @@ node index.js
 * linter
 * node-fetch
 * express-rate-limit
+* node-cache
 
-**專案版本: 1.1**
+**專案版本: 1.2**
