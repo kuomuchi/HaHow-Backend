@@ -1,4 +1,4 @@
-const { getHero } = require("../models/get_hero_data")
+const { getHero } = require("../models/send_hero")
 
 async function catchHeroesData(req, res){
     const { heroId } = req.params // get hero id
