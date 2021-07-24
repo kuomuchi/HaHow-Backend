@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kuomuchi/HaHow-Backend#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
