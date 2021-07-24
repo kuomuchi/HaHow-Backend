@@ -5,7 +5,7 @@
 
 最基本的功能為抓取創建API。
 
-會再透過此API延伸更多的功能。此API非彼API。
+會再透過此API延伸其它的功能。此API非彼API。
 
 ## 如何啟動
 ```
@@ -16,7 +16,7 @@ node index.js
 ## 未來功能
 * 加入docker
 * 新增偽API資料
-* 加入DB，NoSQL
+* 加入DB，NoSQL，如果API沒有提供資料，可以拿取上一筆Hero Data。
 
 ## 好想要玩
 專案有很多的英雄，不來一點互相傷害怎麼說得過去！！
@@ -29,5 +29,6 @@ node index.js
 * node-fetch
 * express-rate-limit
 * node-cache
+* node-cron
 
-**專案版本: 1.2**
+**專案版本: 1.4**
