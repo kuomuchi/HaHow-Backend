@@ -1,5 +1,5 @@
 require("dotenv").config()
-const { mongodbDatabases } = process.env
+const { mongodbDatabases,mongodbTestDatabaese } = process.env
 
 const chai = require("chai")
 const app = require("../index")
@@ -18,8 +18,8 @@ const {
 before( async () => {
 
 	console.log("now databases: "+ mongodbDatabases)
-	if (mongodbDatabases !== "test"){
-		throw new Error("warning databases is not 「test」")
+	if (mongodbDatabases !== mongodbTestDatabaese){ // databsese warning
+		throw new Error("warning databases is not " + mongodbTestDatabaese)
 	}else{
 
 		it("clear DB", async () => {

@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { mongodbDatabases } = process.env
+const { mongodbDatabases, mongodbTestDatabaese } = process.env
 
 const cron = require('node-cron');
 const {combineHero} = require("./cache")
@@ -7,7 +7,7 @@ const {combineHero} = require("./cache")
 
 function stratCatchData(){ // catch heroes data
 
-    if(mongodbDatabases !== "test"){
+    if(mongodbDatabases !== mongodbTestDatabaese){
         combineHero()
 
         cron.schedule('*/30 * * * *', () => { // each 30min catch 

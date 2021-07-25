@@ -1,5 +1,8 @@
+require('dotenv').config()
 const express = require("express")
 const app = express()
+let { port } = process.env
+port = (port)? port : 3000
 
 const { apiLimiter } = require("./limiter_ rule") // limite
 
@@ -13,8 +16,8 @@ app.use("/", apiLimiter, [
 	require("./server/routes/heroes.js") // heroes api
 ])
 
-app.listen(3000, () => {
-    console.log("run on 3000")
+app.listen(port, () => {
+    console.log("run on " + port)
 })
 
 module.exports = app
