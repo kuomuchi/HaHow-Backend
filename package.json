@@ -1,0 +1,34 @@
+{
+  "name": "hahow-backend",
+  "version": "1.0.0",
+  "description": "HaHow の hero Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mongodbDatabases='test' mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuomuchi/HaHow-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuomuchi/HaHow-Backend/issues"
+  },
+  "homepage": "https://github.com/kuomuchi/HaHow-Backend#readme",
+  "dependencies": {
+    "chai-http": "^4.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
+    "mocha": "^9.0.2",
+    "mongodb": "^4.0.1",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.31.0"
+  }
+}
