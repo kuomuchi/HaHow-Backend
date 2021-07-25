@@ -1,10 +1,8 @@
-const { updataData, selectData } = require("./server/models/mongodb")
+const {selectData} = require("./server/models/mongodb")
 
-const obj = {name: "greate"}
-selectData(obj, "test")
-
-
-const testdd = {
-    name: 'greate'
+const obj = {
+    id:{ $type: 1 }
 }
-// updataData(testdd, testdd, "test")
+selectData(obj, "heroes").then((res) => {
+    console.log(res)
+})
