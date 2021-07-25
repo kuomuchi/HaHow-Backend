@@ -12,6 +12,10 @@ async function setProfile(num, id, obj){ // set all hero profile an a obj
     const heroId = id[num]
     let data = await getHeroProfile(heroId)
 
+    if(!data){
+        return false
+    }
+
     if(data.status !== 200){ // if fail, catch data again
         return setProfile(num, id, obj)
     }
@@ -32,16 +36,20 @@ async function combineHero(){ // update hero data to cache
 
     const profile = await setProfile(allId.length - 1, allId, {}) // sort hero profile
 
+    if(!profile){ // data err return it
+        console.log("data err")
+        return false
+    }
+
     for(let num = 0; num < data.length; num++){
-        data[num].profile = profile[data[num].id] // combine hero data
+        data[num].profile = profile[data[num].id] // combine heroes data
     }
     
-    myCache.set(key, data)
-    console.log(data)
+    myCache.set(key, data) // set cache
 
-    upDateHeroes(data, 0, key).then( (res) => {console.log(res)})
+    await upDateHeroes(data, 0, key).then( (res) => {console.log(res)}) // upload data to db
 
-    return
+    return true
 }
 
 module.exports = {

@@ -8,15 +8,18 @@ async function getHero(status, heroId){
 
     if(!hero){ // if cache is null
         reSend = await selectData({}, "heroes")
-        
-        if(reSend.length < 1){ // if db is null
-            reSend = require("./hero_ default_data") 
+
+        if(reSend.length === 0){ // db is null
+            const data = require("../../util/hero_default_data") // get default data
+            myCache.set("heroes", data)
+
+            reSend = myCache.get("heroes")
+
         }
 
     }else{
-        reSend = [...hero] // shallow copy
+        reSend = [...hero] // Deep Copy
     }
-    
 
     if(heroId && !isNaN(heroId)){ // HeroId is true
 
@@ -37,6 +40,7 @@ async function getHero(status, heroId){
         if(!status){ // authority false delete profile
             reSend.map((obj) => {delete obj.profile})
         }
+        reSend = {heroes: reSend}
             
     }
     

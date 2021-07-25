@@ -92,9 +92,37 @@ function updateData(select, obj, collection){ // update data
     })
 }
 
+
+function dropCollect(collection){ // drop Collect
+
+    return new Promise( (resolve) => {
+
+        mongo.connect(url, function(err, db) {
+            if (err) throw err
+            const dbo = db.db(mongodbDatabases)
+        
+            dbo.collection(collection).drop(function(err, res) {
+                if (err) throw err
+            
+                console.log("drop:" + collection)
+                db.close()
+
+                resolve(res)
+        
+            })
+        })
+    })
+    
+}
+
+
+
+  
+
 module.exports = {
     selectData,
     insertData,
     deleteData,
-    updateData
+    updateData,
+    dropCollect
 }

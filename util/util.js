@@ -15,7 +15,6 @@ const authenticated = () => {
     return async function (req, res, next) {
         const { name, password} = req.headers;
 
-
         const userObj = {
             name: name,
             admin: await userAuthentication(name, password)

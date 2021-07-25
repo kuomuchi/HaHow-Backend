@@ -14,6 +14,11 @@ npm install
 node index.js
 ```
 
+## test
+```
+npm test
+```
+
 ## 未來功能
 * 加入docker
 * 新增偽API資料
@@ -33,5 +38,6 @@ node index.js
 * node-cron
 * dotenv
 * mongoDB
+* mocha / chai / http-chai
 
-**專案版本: 1.6**
+**專案版本: 1.7**

@@ -11,7 +11,9 @@ const sendType = { // fetch data type
 function getHeroProfile(heroId){ // catch single hero profile
     return new Promise((resolve, reject) => {
         const data = fetch(`https://hahow-recruit.herokuapp.com/heroes/${heroId}/profile`,sendType).catch((err) => {
-            reject(err)
+            if(err)throw err
+
+            reject(false)
         })
         resolve(data)
     })
