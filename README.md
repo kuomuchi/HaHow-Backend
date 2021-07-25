@@ -16,9 +16,11 @@
 ```
 
 server啟動後每30分鐘，修改一次DB的資料。
+抓到HaHow的資料後，會直接存到Cache、與DB裡面。
 
+用戶請求API時，優先與Cache互動。
 
-
+![api_image](https://user-images.githubusercontent.com/42135910/126902609-26d5305f-8fdf-426c-8344-4c15542cacc6.gif)
 
 
 ## 如何啟動
