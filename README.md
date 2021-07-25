@@ -10,24 +10,51 @@
 每30分鐘，修改一次DB的資料。
 
 ## 如何啟動
+先把這份專案給clone下來
 ```
-npm install
-node index.js
+git clone https://github.com/kuomuchi/HaHow-Backend.git
+```
+接下來需要新增一個 .evn 檔案。
+複製一份「.env_template」
+將檔名改成「.env」
+
+此專案有使用到MongoDB
+
+.env 內部格式：
+```
+mongodbURL: <MongoDB 連線url>
+mongodbDatabases: <MongoDB Databases>
+mongodbTestDatabaese = "test" <MongoDB 測試用的 databases>
+port = "3000" <目前3000>
+```
+
+接下來就可以直接開始跑這個專案
+
+```
+npm install   // 安裝套件
+node index.js // 執行 index.js
 ```
 
 ## test
+使用的工具是 mocha
+測試過程會將mongoDB的 collection 清除，這有相當的危險性。 怕爆.jpg
+在測試之前，到「package.json」裡：
+「mongodbDatabases」預設是 test，可以將其換成前面設定 「mongodbTestDatabaese」設置的 databases。
+確保在測試過程當中，使用的Databases是 測試用的 databases。
+
+```
+// 預設是test
+"scripts": {
+    "test": "mongodbDatabases='test' mocha"
+}
+```
+
+準備好之後，就可以開始跑測試了。
+
 ```
 npm test
 ```
 
-## 未來功能
-* 加入docker
-* 新增偽API資料
-
-## 好想要玩
-專案有很多的英雄，不來一點互相傷害怎麼說得過去！！
-* socket
-* canvas
 
 ## 使用工具
 * express
