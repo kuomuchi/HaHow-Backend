@@ -6,8 +6,22 @@
 最基本的功能為抓取創建API。
 
 如果cache裡面沒有資料，會接跟DB拿取資料。
-如果DB沒有資料，則會使用預設的資料。
-每30分鐘，修改一次DB的資料。
+
+要是DB沒有資料，則會使用預設的資料。
+
+預設的資料在放在[這裡](./util/hero_default_data.js)
+
+```
+~ /util/hero_default_data.js
+```
+
+server啟動後每30分鐘，修改一次DB的資料。
+抓到HaHow的資料後，會直接存到Cache與DB裡面。
+
+用戶請求API時，優先與Cache互動。
+
+![api_image](https://user-images.githubusercontent.com/42135910/126902609-26d5305f-8fdf-426c-8344-4c15542cacc6.gif)
+
 
 ## 如何啟動
 先把這份專案給clone下來
@@ -28,7 +42,7 @@ mongodbTestDatabaese = "test" <MongoDB 測試用的 databases>
 port = "3000" <目前3000>
 ```
 
-接下來就可以直接開始跑這個專案
+接下來就可以開始跑這個專案
 
 ```
 npm install   // 安裝套件
