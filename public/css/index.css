@@ -1,0 +1,70 @@
+.title_box{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+
+.title_pos{
+    display: flex;
+    flex-direction:column;
+
+}
+
+.select_hero{
+    font-size: 30px;
+}
+
+#start{
+    transition: 0.2s;
+
+    position: absolute;
+    
+    margin-top: 50px;
+    text-align: center;
+
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+
+    border-radius: 20px;
+    border: solid 1px black;
+
+    cursor: pointer;
+}
+
+#start:hover{
+    background-color: #eee;
+}
+
+
+.hero_box{
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+
+
+#hero_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.hero{
+    transition: 0.7s;
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+
+    width: 120px;
+    height: 150px;
+    margin: 15px;
+    background-color: #ccc;
+    cursor: pointer;
+
+    border-radius: 2px;
+}
+
+.hero:hover{
+    background-color: #aaa;
+}
