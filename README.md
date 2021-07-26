@@ -51,9 +51,13 @@ node index.js // 執行 index.js
 
 ## test
 使用的工具是 mocha
+
 測試過程會將mongoDB的 collection 清除，這有相當的危險性。 怕爆.jpg
+
 在測試之前，到「package.json」裡：
+
 「mongodbDatabases」預設是 test，可以將其換成前面設定 「mongodbTestDatabaese」設置的 databases。
+
 確保在測試過程當中，使用的Databases是 測試用的 databases。
 
 ```
