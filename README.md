@@ -86,7 +86,7 @@ npm test
 * mocha / chai / http-chai
 * socket io
 
-**專案版本: 1.8** 
+**專案版本: 1.8**
 
 
 **超過時間の本版;D，預計一段時間後才會margin到main**
@@ -123,7 +123,7 @@ front end:
 
 socket io:
 - 收到來自「room」的請求: 
-  - 確認此user id 是否重複加入，房間空間是否足夠。
+  - 確認此user id 是否重複加入，房間空間是否足夠。
   - 沒問題回傳 true，否則 err msg
 - 收到來自「fight」的請求:
   - 確認 user 身份:
