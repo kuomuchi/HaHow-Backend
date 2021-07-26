@@ -80,5 +80,57 @@ npm test
 * dotenv
 * mongoDB
 * mocha / chai / http-chai
+* socket io
 
-**專案版本: 1.7**
+**專案版本: 1.8** 
+
+
+**超過時間の本版;D，預計一段時間後才會margin到main**
+
+*****
+
+## 額外的socket io
+好想要玩socket.io！
+
+目前從Hahow call 存取了一些資料，這些英雄不分DC、Marvel。
+
+一直以來都想要做一個多人小遊戲，不久前知道了socket.io room，針對特定的房間發送訊息，聽起來很酷。
+
+所以就想要試試看，使用socket.io room 做一個即時多人遊戲。
+
+「主體遊戲是一個 1v1 下指令的遊戲」，「回合制」或是「即時」有待確認。
+
+目前一共有3個頁面:
+- home page (選擇角色)
+- room page (選擇房間)
+- fight page (互相傷害)
+
+頁面順序如下：
+```
+home page -> room page -> fight page -> room page
+```
+
+## 額外的socket io到底在幹嘛？
+front end:
+1. 進入`home page`選擇角色，將資料存入LocalStorage後，進入`room page`。
+2. 在`room page`可以選擇房間進入，點擊「加入」傳送請求到`server`，回傳值為 true 則跳轉 `fight page`，
+3. 進入`fight room`發送請求給`server`....<正在做遊戲本體 orz>
+
+
+socket io:
+- 收到來自「room」的請求: 
+  - 確認此user id 是否重複加入，房間空間是否足夠。
+  - 沒問題回傳 true，否則 err msg
+- 收到來自「fight」的請求:
+  - 確認 user 身份:
+  - 身份確認，將其加入 socket io 的 room。
+
+## 額外的socket io 後續..
+- [x] 加入房間
+- [ ] 遊戲本體
+- [ ] 流量限制
+- [ ] 測試 ;D
+
+*****
+
+好像還有docker要先架上去... 誒嘿:D
